@@ -8,6 +8,25 @@ public SuperArray(){
 }
 public int size(){
   return size;
+}
+public boolean add(String element){
+  int a= -1;
+  for(int i=0; i<data.length; i++)
+  {
+    if(data[i]== null)
+    {
+      a= i;
+    }
+  }
+  if(a == -1){
+    return false;
+  }
+  else {
+    data[a]= element;
+    return true;
+  }
+}
+
 
 
 
