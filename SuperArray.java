@@ -26,6 +26,9 @@ public boolean add(String element){
     return true;
   }
 }
+public String get(int index){
+  return data[index];
+}
 
 
 
