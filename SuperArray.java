@@ -29,7 +29,9 @@ public boolean add(String element){
 public String get(int index){
   return data[index];
 }
-
+public String set(int index, String element){
+data[index] = element;
+}
 
 
 
