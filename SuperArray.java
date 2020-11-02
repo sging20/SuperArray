@@ -19,20 +19,37 @@ public boolean add(String element){
     }
   }
   if(a == -1){
-    return false;
+    data.resize();
+  for(int i=0; i<data.length; i++)
+  {
+    if(data[i]== null)
+    {
+      data[i] = element;
+    }
   }
+}
   else {
     data[a]= element;
     return true;
   }
+  return true;
 }
+
 public String get(int index){
   return data[index];
 }
 public String set(int index, String element){
+String val = data[index];
 data[index] = element;
+return val;
 }
-
+private void resize(){
+  String[]datatwo = new String[size+ 10];
+  for(int i=0; i< data.length; i++){
+    datatwo[i] = data[i];
+  }
+  data = datatwo;
+}
 
 
 
