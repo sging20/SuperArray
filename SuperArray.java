@@ -60,7 +60,10 @@ public boolean contains(String s){
   }
   return gotStr;
 }
-
+public void clear(){
+  String datathree = new String[data.length];
+  size = 0;
+}
 
 
 }
