@@ -37,4 +37,16 @@ private void resize(){
   }
   data = datatwo;
   }
+  public boolean isEmpty(){
+      if(size !=0){
+        return false;
+      }
+      return true;
+    }
+  public String toString(){
+    String ret = "[";
+    for(int i=0; i< data.length; i++){
+      ret += "e" + data[i] + ", ";
+    }
+    return ret + "]";
 }
