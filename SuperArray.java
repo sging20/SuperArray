@@ -2,6 +2,7 @@ public class SuperArray {
 //Instance Variables
 private String[] data;
 private int size; //the current size
+
 public SuperArray(){
   size = 10;
   String[] data= new String[size];
@@ -19,20 +20,21 @@ public boolean add(String element){
     }
   }
   if(a == -1){
-    data.resize();
+    this.resize();
   for(int i=0; i<data.length; i++)
   {
     if(data[i]== null)
     {
-      data[i] = element;
+      a= i;
     }
   }
+  data[a]= element;
+  return true;
 }
   else {
     data[a]= element;
     return true;
   }
-  return true;
 }
 
 public String get(int index){
@@ -44,14 +46,11 @@ data[index] = element;
 return val;
 }
 private void resize(){
-  String[]datatwo = new String[size+ 10];
+  size+= 10;
+  String[]datatwo = new String[size];
   for(int i=0; i< data.length; i++){
     datatwo[i] = data[i];
   }
   data = datatwo;
 }
-
-
-
-
 }
