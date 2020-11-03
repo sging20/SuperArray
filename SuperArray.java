@@ -31,7 +31,7 @@ data[index] = element;
 return val;
 }
 private void resize(){
-  String[]datatwo = new String[data.length + 10];
+  String[]datatwo = new String[data.length + data.length];
   for(int i=0; i< data.length; i++){
     datatwo[i] = data[i];
   }
