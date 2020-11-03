@@ -11,30 +11,13 @@ public int size(){
   return size;
 }
 public boolean add(String element){
-  int a= -1;
-  for(int i=0; i<data.length; i++)
-  {
-    if(data[i]== null)
+  if(size == data.length)
     {
-      a= i;
+      resize();
     }
-  }
-  if(a == -1){
-    this.resize();
-  for(int i=0; i<data.length; i++)
-  {
-    if(data[i]== null)
-    {
-      a= i;
-    }
-  }
-  data[a]= element;
-  return true;
-}
-  else {
-    data[a]= element;
-    return true;
-  }
+data[size] = element;
+size+= 1;
+return true;
 }
 
 public String get(int index){
