@@ -5,7 +5,7 @@ private int size; //the current size
 
 public SuperArray(){
   size = 10;
-  String[] data= new String[size];
+  data= new String[size];
 }
 public int size(){
   return size;
@@ -35,5 +35,5 @@ private void resize(){
     datatwo[i] = data[i];
   }
   data = datatwo;
-}
+  }
 }
