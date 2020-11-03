@@ -50,4 +50,17 @@ private void resize(){
     }
     return ret + "]";
 }
+public boolean contains(String s){
+  boolean gotStr = false;
+  for(int i=0; i<data.length; i++)
+  {
+    if(data[i].equals(s)){
+      gotStr = true;
+    }
+  }
+  return gotStr;
+}
+
+
+
 }
