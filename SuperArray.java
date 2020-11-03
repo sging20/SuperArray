@@ -7,7 +7,10 @@ public SuperArray(){
   size = 0;
   data= new String[10];
 }
-
+public SuperArray(int InitialCapacity){
+  size =0;
+  data= new String[InitialCapacity];
+}
 public int size(){
   return size;
 }
@@ -61,8 +64,23 @@ public boolean contains(String s){
   return gotStr;
 }
 public void clear(){
-  String datathree = new String[data.length];
+  String[] datathree = new String[data.length];
+  data= datathree;
   size = 0;
+}
+public void add(int index, String element){
+
+}
+public String remove(int index){
+
+}
+
+public int indexOf(String s){
+
+}
+
+public String[] toArray(){
+
 }
 
 
