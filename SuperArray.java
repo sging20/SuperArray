@@ -4,19 +4,21 @@ private String[] data;
 private int size; //the current size
 
 public SuperArray(){
-  size = 10;
-  data= new String[size];
+  size = 0;
+  data= new String[10];
 }
+
 public int size(){
   return size;
 }
+
 public boolean add(String element){
   if(size == data.length)
     {
       resize();
     }
 data[size] = element;
-size+= 1;
+size= size + 1;
 return true;
 }
 
@@ -29,8 +31,7 @@ data[index] = element;
 return val;
 }
 private void resize(){
-  size+= 10;
-  String[]datatwo = new String[size];
+  String[]datatwo = new String[data.length + 10];
   for(int i=0; i< data.length; i++){
     datatwo[i] = data[i];
   }
