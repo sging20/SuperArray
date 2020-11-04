@@ -74,9 +74,15 @@ public void add(int index, String element){
 if(size == data.length){
   resize();
 }
-
+for(int i= index + 1; i< size+ 1; i++){
+  data[i]= data[i+1];
+}
+data[index]= element;
 }
 public String remove(int index){
+if(size == data.length){
+  resize();
+}
 String removed = data[index];
 for(int i= index; i < size - 1; i++){
   data[i] = data[i+1];
@@ -85,7 +91,14 @@ return removed;
 }
 
 public int indexOf(String s){
-
+for(int i=0; i< data.length; i++){
+  if(data[i].equals(s)){
+    return i;
+  }
+}
+else{
+  return -1;
+}
 }
 
 public String[] toArray(){
