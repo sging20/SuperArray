@@ -49,7 +49,7 @@ private void resize(){
   public String toString(){
     String ret = "[";
     for(int i=0; i< data.length; i++){
-      ret += "e" + data[i] + ", ";
+      ret += "e" + data[i] + ", "; //Must be for Strings with values!!!!
     }
     return ret + "]";
 }
@@ -69,10 +69,17 @@ public void clear(){
   size = 0;
 }
 public void add(int index, String element){
+if(size == data.length){
+  resize();
+}
 
 }
 public String remove(int index){
-
+String removed = data[index];
+for(int i= index; i < size - 1; i++){
+  data[i] = data[i+1];
+}
+return removed;
 }
 
 public int indexOf(String s){
