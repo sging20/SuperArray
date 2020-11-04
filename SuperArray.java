@@ -52,7 +52,6 @@ private void resize(){
     for(int i=0; i< size -1; i++){
       ret += "e" + data[i] + ", "; //Must be for Strings with values!!!!
     }
-  }
     return ret + data[size- 1] + "]";
 }
 public boolean contains(String s){
@@ -96,14 +95,12 @@ for(int i=0; i< data.length; i++){
     return i;
   }
 }
-else{
   return -1;
 }
 }
 
-public String[] toArray(){
 
-}
-
-
-}
+// public String[] toArray(){
+//
+//
+// }
