@@ -97,10 +97,14 @@ for(int i=0; i< data.length; i++){
 }
   return -1;
 }
+
+
+public String[] toArray(){
+String[] output = new String[size];
+for(int i=0; i< size; i++){
+  output[i] = data[i];
+}
+return output;
 }
 
-
-// public String[] toArray(){
-//
-//
-// }
+}
