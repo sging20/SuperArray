@@ -47,11 +47,13 @@ private void resize(){
       return true;
     }
   public String toString(){
+    if(size == 0) return "[]";
     String ret = "[";
-    for(int i=0; i< data.length; i++){
+    for(int i=0; i< size -1; i++){
       ret += "e" + data[i] + ", "; //Must be for Strings with values!!!!
     }
-    return ret + "]";
+  }
+    return ret + data[size- 1] + "]";
 }
 public boolean contains(String s){
   boolean gotStr = false;
