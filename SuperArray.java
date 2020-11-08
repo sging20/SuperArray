@@ -122,10 +122,16 @@ for(int i=0; i< size; i++){
 }
 return output;
 }
-
-// public static void removeDuplicates(SuperArray s){
-//   String[] output = new String[size];
-//
-// }
+public static void removeDuplicates(SuperArray s){
+  String[] output = new String[size];
+for(int i=0; i< size(); i++){
+  int number = data[i];
+  for(int j=0; j< size(); j++){
+  if(data[i] == data[j] && i != j){
+    remove(j);
+  }
+}
+}
+}
 
 }
