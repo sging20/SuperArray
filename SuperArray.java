@@ -38,7 +38,7 @@ return val;
 }
 
 private void resize(){
-  String[]datatwo = new String[data.length + data.length];
+  String[]datatwo = new String[data.length * 2];
   for(int i=0; i< data.length; i++){
     datatwo[i] = data[i];
   }
@@ -55,16 +55,19 @@ private void resize(){
   public String toString(){
     if(size == 0) return "[]";
     String ret = "[";
-    for(int i=0; i< size -1; i++){
-      ret += "e" + data[i] + ", "; //Must be for Strings with values!!!!
+    for(int i=0; i< size() -1; i++){
+      ret += data[i] + ", "; //Must be for Strings with values!!!!
     }
     return ret + data[size- 1] + "]";
 }
 
 public boolean contains(String s){
   boolean gotStr = false;
-  for(int i=0; i<data.length; i++)
+  for(int i=0; i< size; i++)
   {
+    if(data[i] == null){
+      return false;
+    }
     if(data[i].equals(s)){
       gotStr = true;
     }
@@ -79,36 +82,39 @@ public void clear(){
 }
 
 public void add(int index, String element){
-if(size == data.length){
+if(size >= data.length){
   resize();
 }
-for(int i= index + 1; i< size+ 1; i++){
-  data[i]= data[i+1];
+for(int i= size -1; i>= index; i--){
+  data[i+1]= data[i];
 }
+size++;
 data[index]= element;
 }
 
 public String remove(int index){
-if(size == data.length){
+String removed = data[index];
+if(size >= data.length){
   resize();
 }
-String removed = data[index];
-for(int i= index; i < size - 1; i++){
+for(int i= index; i < size -1; i++){
   data[i] = data[i+1];
 }
+size--;
+data[size]= null;
 return removed;
 }
 
 public int indexOf(String s){
-for(int i=0; i< data.length; i++){
-  if(data[i].equals(s)){
+for(int i=0; i< size(); i++){
+  if(s != null && data[i] != null){
+    if(data[i].equals(s)){
     return i;
+    }
   }
-}
+  }
   return -1;
 }
-
-
 public String[] toArray(){
 String[] output = new String[size];
 for(int i=0; i< size; i++){
@@ -116,5 +122,10 @@ for(int i=0; i< size; i++){
 }
 return output;
 }
+
+// public static void removeDuplicates(SuperArray s){
+//   String[] output = new String[size];
+//
+// }
 
 }
