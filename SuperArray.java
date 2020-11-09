@@ -126,12 +126,14 @@ return output;
 
 public int lastIndexOf(String value){
   String[] output = new String[size()];
-  for(int i= size()-1; i> =0; i--){
+  for(int i= size()-1; i>= 0; i--){
     if(value != null && data[i] != null){
-      if(data[i].equals(s)){
+      if(data[i].equals(value)){
         return i;
       }
     }
   }
   return -1;
+}
+
 }
