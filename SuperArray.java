@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class SuperArray {
 //Instance Variables
 private String[] data;
@@ -134,6 +135,16 @@ public int lastIndexOf(String value){
     }
   }
   return -1;
+}
+
+public boolean equals(SuperArray other){
+  if (size() != other.size()) return false;
+  for(int i=0; i< size() -1; i++){
+    if (!(other.data[i].equals(data[i]))) {
+      return false;
+    }
+  }
+  return true;
 }
 
 }
