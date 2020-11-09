@@ -122,16 +122,16 @@ for(int i=0; i< size; i++){
 }
 return output;
 }
-public static void removeDuplicates(SuperArray s){
-  String[] output = new String[size];
-for(int i=0; i< size(); i++){
-  int number = data[i];
-  for(int j=0; j< size(); j++){
-  if(data[i] == data[j] && i != j){
-    remove(j);
-  }
-}
-}
-}
 
+
+public int lastIndexOf(String value){
+  String[] output = new String[size()];
+  for(int i= size()-1; i> =0; i--){
+    if(value != null && data[i] != null){
+      if(data[i].equals(s)){
+        return i;
+      }
+    }
+  }
+  return -1;
 }
