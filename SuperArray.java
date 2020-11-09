@@ -139,7 +139,7 @@ public int lastIndexOf(String value){
 
 public boolean equals(SuperArray other){
   if (size() != other.size()) return false;
-  for(int i=0; i< size() -1; i++){
+  for(int i=0; i< size(); i++){
     if (!(other.data[i].equals(data[i]))) {
       return false;
     }
