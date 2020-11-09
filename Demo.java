@@ -38,7 +38,7 @@ public static SuperArray zipped (SuperArray a, SuperArray b){
   SuperArray output = new SuperArray();
   int small = 0;
   SuperArray big = new SuperArray();
-  if(a.size() <= b.size(){
+  if(a.size() <= b.size()) {
     small = a.size();
     big= b;
   }
