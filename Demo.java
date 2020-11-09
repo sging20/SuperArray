@@ -25,6 +25,20 @@ public static void main(String[]args){
     removeDuplicates(words);
     System.out.println(words);  }
 
+public static SuperArray findOverlap(SuperArray a, SuperArray b){
+    SuperArray output = new SuperArray();
+    int count = 0;
+    for(int i=0; i< a.size(); i++){
+    if(b.contains(a.get(i))){
+      output.add(a.get(i));
+      count++;
+    }
+  }
+  removeDuplicates(output);
+  return output;
+}
+
+
 
 
 
