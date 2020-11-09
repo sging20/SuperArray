@@ -34,7 +34,7 @@ public static SuperArray findOverlap(SuperArray a, SuperArray b){
   removeDuplicates(output);
   return output;
 }
-public static SuperArray zipped (SuperArray a, SuperArray b){
+public static SuperArray zip(SuperArray a, SuperArray b){
   SuperArray output = new SuperArray();
   int small = 0;
   SuperArray big = new SuperArray();
