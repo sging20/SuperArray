@@ -10,6 +10,10 @@ public SuperArray(){
 }
 
 public SuperArray(int InitialCapacity){
+  if(InitialCapacity < 0)
+  {
+    throw new IllegalArgumentException("Negative initial capacity " + InitialCapacity);
+  }
   size =0;
   data= new String[InitialCapacity];
 }
@@ -29,10 +33,16 @@ return true;
 }
 
 public String get(int index){
+  if(index < 0 || index>=size()){
+    throw new IndexOutOfBoundsException("Index out of range" + index);
+  }
   return data[index];
 }
 
 public String set(int index, String element){
+  if(index < 0 || index>=size()){
+    throw new IndexOutOfBoundsException("Index out of range" + index);
+  }
 String val = data[index];
 data[index] = element;
 return val;
@@ -83,7 +93,10 @@ public void clear(){
 }
 
 public void add(int index, String element){
-if(size >= data.length){
+  if(index < 0 || index>=size()){
+    throw new IndexOutOfBoundsException("Index out of bounds" + index);
+  }
+  if(size >= data.length){
   resize();
 }
 for(int i= size -1; i>= index; i--){
@@ -94,6 +107,9 @@ data[index]= element;
 }
 
 public String remove(int index){
+  if(index < 0 || index>=size()){
+    throw new IndexOutOfBoundsException("Index out of bounds" + index);
+  }
 String removed = data[index];
 if(size >= data.length){
   resize();
@@ -125,7 +141,7 @@ return output;
 }
 
 
-public int lastIndexOf(String value){
+public int lastIndexOf(String value){ //no exceptions here
   String[] output = new String[size()];
   for(int i= size()-1; i>= 0; i--){
     if(value != null && data[i] != null){
@@ -137,7 +153,7 @@ public int lastIndexOf(String value){
   return -1;
 }
 
-public boolean equals(SuperArray other){
+public boolean equals(SuperArray other){ //no exceptions here
   if (size() != other.size()) return false;
   for(int i=0; i< size(); i++){
     if (!(other.data[i].equals(data[i]))) {
