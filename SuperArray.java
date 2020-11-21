@@ -93,7 +93,7 @@ public void clear(){
 }
 
 public void add(int index, String element){
-  if(index < 0 || index>=size()){
+  if(index < 0 || index>size()){
     throw new IndexOutOfBoundsException("Index out of bounds" + index);
   }
   if(size >= data.length){
